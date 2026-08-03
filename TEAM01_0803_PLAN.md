@@ -43,36 +43,29 @@ Streamlit, FastAPI, Supabase를 활용하여 고객·상품·장바구니·공�
 ```
 .
 ├── backend/
-│   ├── __init__.py
 │   └── app/
-│       ├── __init__.py
 │       ├── main.py                       # FastAPI 앱 및 라우터 등록
 │       ├── core/
-│       │   ├── __init__.py
 │       │   └── supabase_client.py        # Supabase 클라이언트 생성
 │       ├── routers/
-│       │   ├── __init__.py
 │       │   ├── customers_routers.py      # 고객 API
 │       │   ├── products_routers.py       # 상품 API
 │       │   ├── cart_items_routers.py     # 장바구니 API
 │       │   ├── notices_routers.py        # 공지사항 API
 │       │   └── auth_routers.py           # 인증 API
 │       ├── schemas/
-│       │   ├── __init__.py
 │       │   ├── customer_schemas.py
 │       │   ├── product_schemas.py
 │       │   ├── cart_item_schemas.py
 │       │   ├── notice_schemas.py
 │       │   └── auth_schemas.py
 │       └── services/
-│           ├── __init__.py
 │           ├── customer_service.py
 │           ├── product_service.py
 │           ├── cart_item_service.py
 │           ├── notice_service.py
 │           └── auth_service.py
 ├── frontend/
-│   ├── __init__.py
 │   ├── app.py                            # Streamlit 메인 화면
 │   ├── pages/
 │   │   ├── 01_customers.py
