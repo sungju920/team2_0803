@@ -1,6 +1,5 @@
 """모든 메뉴 API에서 공통으로 사용하는 HTTP 요청 기능."""
 
-import os
 from typing import Any
 
 import httpx
@@ -42,6 +41,16 @@ def request(method: str, path: str, json: dict[str, Any] | None = None):
         raise BackendAPIError(
             "ID가 사용 중 입니다."
         )
+    if not response.is_success:
+        try:
+            error_payload = response.json()
+            detail = error_payload.get("detail")
+        except ValueError:
+            detail = None
+
+        raise BackendAPIError(
+            detail or f"백엔드 요청에 실패했습니다. ({response.status_code})"
+    )
    
     try:
         payload = response.json()
