@@ -4,9 +4,9 @@ from datetime import datetime, timezone
 
 from fastapi import HTTPException
 
-from backend.app.core.password import hash_password
-from backend.app.core.supabase_client import get_supabase_client
-from backend.app.schemas.customer_schemas import (
+from app.core.password import hash_password
+from app.core.supabase_client import get_supabase_client
+from app.schemas.customer_schemas import (
     CustomerCreate,
     CustomerDeleteResponse,
     CustomerResponse,

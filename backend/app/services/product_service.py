@@ -3,8 +3,8 @@
 # product_service.py
 from uuid import UUID
 
-from backend.app.schemas.product_schemas import ProductCreate, ProductPublic, ProductUpdate
-from backend.app.core.supabase_client import get_supabase
+from app.schemas.product_schemas import ProductCreate, ProductPublic, ProductUpdate
+from app.core.supabase_client import get_supabase
 
 # 1. 입력
 def product_create(product: ProductCreate) -> ProductPublic | None:

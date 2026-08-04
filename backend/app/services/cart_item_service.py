@@ -5,8 +5,8 @@ from zoneinfo import ZoneInfo
 
 from fastapi import HTTPException
 # from app.core.supabase_client import get_supabase
-from backend.app.core.supabase_client import get_supabase
-from backend.app.schemas.cart_item_schemas import CartItemsCreate, CartItemsPublic, CartItemsUpdate
+from app.core.supabase_client import get_supabase
+from app.schemas.cart_item_schemas import CartItemsCreate, CartItemsPublic, CartItemsUpdate
 
 def cart_add_process(item : CartItemsCreate):
     supabase = get_supabase()

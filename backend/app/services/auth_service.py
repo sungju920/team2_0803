@@ -3,13 +3,13 @@
 
 from fastapi import HTTPException
 
-from backend.app.core.password import verify_password
-from backend.app.schemas.auth_schemas import (
+from app.core.password import verify_password
+from app.schemas.auth_schemas import (
     LoginRequest,
     LoginResponse,
     LogoutResponse,
 )
-from backend.app.services.customer_service import get_customer_by_id
+from app.services.customer_service import get_customer_by_id
 
 
 def sign_in_process(auth: LoginRequest) -> LoginResponse:

@@ -3,7 +3,7 @@
 from datetime import datetime, timezone
 from typing import Any
 
-from backend.app.core.supabase_client import get_supabase_client
+from app.core.supabase_client import get_supabase_client
 
 
 TABLE_NAME = "notices"
