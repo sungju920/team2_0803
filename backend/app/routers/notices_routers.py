@@ -1,13 +1,13 @@
 from fastapi import APIRouter, HTTPException, status
 
-from backend.app.schemas.notice_schemas import (
+from app.schemas.notice_schemas import (
     NoticeCreate,
     NoticeDeleteResult,
     NoticeDetail,
     NoticeListItem,
     NoticeUpdate,
 )
-from backend.app.services import notice_service
+from app.services import notice_service
 
 
 router = APIRouter(prefix="/notices", tags=["notices"])

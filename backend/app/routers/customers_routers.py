@@ -2,13 +2,13 @@
 
 from fastapi import APIRouter
 
-from backend.app.schemas.customer_schemas import (
+from app.schemas.customer_schemas import (
     CustomerCreate,
     CustomerDeleteResponse,
     CustomerResponse,
     CustomerUpdate,
 )
-from backend.app.services.customer_service import (
+from app.services.customer_service import (
     create_customer,
     delete_customer,
     get_customer,

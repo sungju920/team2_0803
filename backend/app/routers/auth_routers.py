@@ -2,12 +2,12 @@
 
 from fastapi import APIRouter
 
-from backend.app.schemas.auth_schemas import (
+from app.schemas.auth_schemas import (
     LoginRequest,
     LoginResponse,
     LogoutResponse,
 )
-from backend.app.services.auth_service import (
+from app.services.auth_service import (
     sign_in_process,
     sign_out_process,
 )

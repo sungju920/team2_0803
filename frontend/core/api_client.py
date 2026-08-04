@@ -6,7 +6,7 @@ from typing import Any
 import requests
 
 
-BACKEND_URL = os.getenv("BACKEND_URL", "http://127.0.0.1:8000").rstrip("/")
+BACKEND_URL = os.getenv("BACKEND_URL", "https://team2-0803.onrender.com").rstrip("/")
 REQUEST_TIMEOUT = 15.0
 
 

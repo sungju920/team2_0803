@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 
-from backend.app.routers import (
+from app.routers import (
     auth_routers,
     cart_items_routers,
     customers_routers,

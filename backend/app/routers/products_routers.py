@@ -2,8 +2,8 @@
 
 from fastapi import APIRouter, HTTPException
 
-from backend.app.schemas.product_schemas import ProductCreate, ProductUpdate
-from backend.app.services.product_service import (
+from app.schemas.product_schemas import ProductCreate, ProductUpdate
+from app.services.product_service import (
     product_create,
     product_delete,
     product_get,
@@ -11,7 +11,7 @@ from backend.app.services.product_service import (
     product_update,
 )
 from uuid import UUID
-from backend.app.core.api_response import ApiResponse
+from app.core.api_response import ApiResponse
 
 router = APIRouter(prefix="/products", tags=["products"])
 
