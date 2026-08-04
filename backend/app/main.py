@@ -1,12 +1,12 @@
 from fastapi import FastAPI
 
-from backend.app.routers import products_routers
-from backend.app.routers import (
+from app.routers import products_routers
+from app.routers import (
     auth_routers,
 )
-from backend.app.routers import cart_items_routers
-from backend.app.routers import customers_routers
-from backend.app.routers import notices_routers
+from app.routers import cart_items_routers
+from app.routers import customers_routers
+from app.routers import notices_routers
 
 app = FastAPI(title="Team 01 CRUD API", version="0.1.0")
 
