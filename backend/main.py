@@ -1,16 +1,15 @@
 from fastapi import FastAPI
 
 from backend.app.routers import (
-    auth_routers,
+    auth_routers,customers_routers,notices_routers,cart_items_routers,products_routers
 )
-from backend.app.routers import customers_routers
-
 app = FastAPI(title="Team 02 CRUD API", version="0.1.0")
 
 app.include_router(customers_routers.router)
 app.include_router(auth_routers.router)
-app.include_router(customers_routers.router)
-app.include_router(notice_routers.router)
+app.include_router(cart_items_routers.router)
+app.include_router(notices_routers.router)
+app.include_router(products_routers.router)
 
 
 @app.get("/health", tags=["health"])
