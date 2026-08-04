@@ -8,7 +8,7 @@ from backend.app.routers import cart_items_routers
 from backend.app.routers import customers_routers
 from backend.app.routers import notices_routers
 
-app = FastAPI(title="Team 01 CRUD API", version="0.1.0")
+app = FastAPI(title="Team 02 CRUD API", version="0.1.0")
 
 app.include_router(customers_routers.router)
 app.include_router(products_routers.router)
