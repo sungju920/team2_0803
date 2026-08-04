@@ -1,17 +1,33 @@
+from __future__ import annotations
+
 import os
-from functools import lru_cache
+from pathlib import Path
 
 from dotenv import load_dotenv
 from supabase import Client, create_client
 
-load_dotenv()
+PROJECT_ROOT = Path(__file__).resolve().parents[2]
+ENV_PATH = PROJECT_ROOT / ".env"
+
+def get_required_env(name: str) -> str:
+    
+
+    value = os.getenv(name, "").strip()
+
+    if not value:
+        raise RuntimeError(f"{name} 값이 없습니다. C:\\aidev\\02_supabase-ai-backend\\.env 파일을 확인하세요.")
+
+    if value.startswith(("your-", "https://your-")):
+        raise RuntimeError(f"{name} 값이 예시 값입니다. Supabase Dashboard에서 실제 값을 복사해 넣어 주세요.")
+
+    return value
 
 
-@lru_cache
-def get_supabase_client() -> Client:
-    url = os.getenv("SUPABASE_URL")
-    key = os.getenv("SUPABASE_KEY")
-    if not url or not key:
-        raise RuntimeError("SUPABASE_URL and SUPABASE_KEY must be set")
-    return create_client(url, key)
+def get_supabase() -> Client:
 
+    load_dotenv(ENV_PATH)
+
+    url = get_required_env("SUPABASE_URL")
+    service_role_key = get_required_env("SUPABASE_SERVICE_ROLE_KEY")
+
+    return create_client(url, service_role_key)
